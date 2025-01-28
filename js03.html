@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ตัวอย่างที่ 3</title>
+</head>
+<body>
+    <!-- สร้างฟอร์มสำหรับคำนวณพื้นที่สี่เหลี่ยม -->
+     <h3>คำนวณพื้นที่สี่เหลี่ยม</h3>
+     กว้าง: <input type="number" id="width"/><br />
+     ยาว: <input type="number" id="length"/><br />
+     <button onclick="calculateArea()">คำนวณ</button>  
+     <p id="result"></p>
+     <script>
+        function calculateArea() {
+            // รับค่าความกว้างและความยาว
+            let width = document.getElementById('width').value;
+            let length = document.getElementById('length').value;
+            // คำนวณพื้นที่
+            let area = width * length;
+            // แสดงผลลัพธ์
+            document.getElementById('result').textContent = 
+            "พื้นที่สี่เหลี่ยม= " + area + " ตารางหน่วย";
+        }
+     </script>
+</body>
+</html>
