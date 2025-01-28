@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ตัวอย่างที่ 4</title>
+</head>
+<body>
+    <h3>รายการสินค้า</h3>
+    <button onclick="showProducts()">แสดงรายการสินค้า</button>
+    <button onclick="remove()">ล้างข้อมูล</button>
+    <ul id="productList"></ul>
+    <script>
+        function showProducts() { 
+            // สร้าง array ของสินค้า
+            const products = ['แอปเปิ้ล', 'กล้วย', 'ส้ม', 'มะม่วง'];
+            let productList = document.getElementById('productList');
+            productList.innerHTML = ""; // ล้างรายการสินค้าเดิมทิ้ง
+
+            // วนลูปแสดงรายการสินค้า
+            for (let i = 0; i < products.length; i++) {
+                let li = document.createElement('li');
+                li.textContent = products[i];
+                productList.appendChild(li);
+            
+        } 
+    }
+        // ฟังก์ชั่นล้างรายการสินค้า
+        function remove() {
+            let productList = document.getElementById('productList');
+            productList.innerHTML = ""; //ล้างรายการสินค้าเดิมทิ้ง
+        }
+    
+    </script>
+</body>
+</html>
