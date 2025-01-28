@@ -1,0 +1,25 @@
+<!-- ตัวอย่างที่ 9: การใช้ Fetch API -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 9</title>
+</head>
+<body>
+    <h3>ดึงข้อมูลจาก API</h3>
+    <button onclick="fetchData()">ดึงข้อมูล</button>
+    <div id="userData"></div>
+<script>
+    function fetchData() {
+        fetch("https://jsonplaceholder.typicode.com/users/2")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("userData").innerHTML = `ชื่อ: ${data.name}<br>อีเมล: ${data.email}<br>โทรศัพท์: ${data.phone}`;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("เกิดข้อผิดพลาดในการดึงข้อมูล");
+            });
+    }
+</script>
+</body>
+</html>

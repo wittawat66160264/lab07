@@ -1,0 +1,32 @@
+<!-- ตัวอย่างที่ 8: การใช้ Timers -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 8</title>
+</head>
+<body>
+    <h3>ตัวนับเวลา</h3>
+    <div id="timer">0</div>
+    <button onclick="startTimer()">เริ่ม</button>
+    <button onclick="stopTimer()">หยุด</button>
+    <button onclick="resetTimer()">รีเซ็ต</button>
+<script>
+    let timerInterval;
+    let seconds = 0;
+    function startTimer() {
+        timerInterval = setInterval(function () {
+            seconds++;
+            document.getElementById("timer").textContent = seconds;
+        }, 1000);
+    }
+    function stopTimer() {
+        clearInterval(timerInterval);
+    }
+    function resetTimer() {
+        seconds = 0;
+        document.getElementById("timer").textContent = seconds;
+        clearInterval(timerInterval);
+    }
+</script>
+</body>
+</html>

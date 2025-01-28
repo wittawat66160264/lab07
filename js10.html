@@ -1,0 +1,33 @@
+<!-- ตัวอย่างที่ 10: การสร้างเกมง่ายๆ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ตัวอย่างที่ 10</title>
+    <style>
+        #gameArea { width: 300px; height: 300px; border: 1px solid black; position: relative; }
+        #target { width: 30px; height: 30px; background-color: red; position: absolute; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h3>เกมคลิกเป้า</h3>
+    <p>คะแนน: <span id="score">0</span></p>
+    <div id="gameArea">
+        <div id="target" onclick="hitTarget()"></div>
+    </div>
+<script>
+    let score = 0;
+    function hitTarget() {
+        score++;
+        document.getElementById("score").textContent = score;
+        let gameArea = document.getElementById("gameArea");
+        let target = document.getElementById("target");
+        let maxX = gameArea.offsetWidth - target.offsetWidth;
+        let maxY = gameArea.offsetHeight - target.offsetHeight;
+        let newX = Math.floor(Math.random() * maxX);
+        let newY = Math.floor(Math.random() * maxY);
+        target.style.left = newX + "px";
+        target.style.top = newY + "px";
+    }
+</script>
+</body>
+</html>

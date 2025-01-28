@@ -1,0 +1,25 @@
+<!-- ตัวอย่างที่ 6: การใช้ Event Listeners -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ตัวอย่างที่ 6</title>
+    <style>
+        #box { width: 100px; height: 100px; background-color: red; margin: 20px; }
+    </style>
+</head>
+<body>
+    <h3>Event Listeners</h3>
+    <div id="box"></div>
+    <p id="coordinates"></p>
+    <script>
+        let box = document.getElementById("box");
+        box.addEventListener("mousemove", function (event) {
+            let coords = document.getElementById("coordinates");
+            coords.textContent = 'พิกัดเมาส์: X=' + event.clientX + ', Y=' + event.clientY;
+        });
+        box.addEventListener("click", function () {
+            this.style.backgroundColor = this.style.backgroundColor === "red" ? "blue" : "red";
+        });
+    </script>
+</body>
+</html>
