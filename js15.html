@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตัวอย่างที่ 15</title>
+</head>
+
+<body>
+    <div id="example15">
+        <h3>15. เครื่องคิดเลขพื้นฐาน</h3>
+        <input type="number" id="num1" placeholder="ตัวเลขที่ 1" />
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" id="num2" placeholder="ตัวเลขที่ 2" />
+        <button onclick="calculate()">คำนวณ</button>
+        <span id="result"></span>
+
+        <script>
+            function calculate() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+                const operator = document.getElementById("operator").value;
+                let result;
+
+                switch (operator) {
+                    case "+":
+                        result = num1 + num2;
+                        break;
+                    case "-":
+                        result = num1 - num2;
+                        break;
+                    case "*":
+                        result = num1 * num2;
+                        break;
+                    case "/":
+                        result = num1 / num2;
+                        break;
+                }
+
+                document.getElementById("result").textContent = isNaN(result)
+                    ? "กรุณาใส่ตัวเลข"
+                    : ' = ' + result;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

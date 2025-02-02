@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตัวอย่างที่ 14</title>
+</head>
+
+<body>
+    <div id="example14">
+        <h3>14. นาฬิกาดิจิตอล</h3>
+        <div id="clock" class="clock"></div>
+
+        <style>
+            .clock {
+                font-size: 2em;
+                font-family: monospace;
+                padding: 10px;
+                border: 2px solid #333;
+                display: inline-block;
+            }
+        </style>
+
+        <script>
+            function updateClock() {
+                const now = new Date();
+                const time = now.toLocaleTimeString();
+                document.getElementById("clock").textContent = time;
+            }
+
+            setInterval(updateClock, 1000);
+            updateClock();
+        </script>
+    </div>
+</body>
+
+</html>

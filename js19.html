@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ตัวอย่างที่ 19</title>
+    <style>
+        .tabs {
+            margin: 20px 0;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>แท็บเนื้อหา</h3>
+    <div class="tabs">
+        <button class="tab-button" onclick="showTab(0)">แท็บ 1</button>
+        <button class="tab-button" onclick="showTab(1)">แท็บ 2</button>
+        <button class="tab-button" onclick="showTab(2)">แท็บ 3</button>
+        <div class="tab-content">ชมพู่</div>
+        <div class="tab-content">สตอเบอรี่</div>
+        <div class="tab-content">แอปเปิ้ล</div>
+    </div>
+    <script>
+        function showTab(tabIndex) {
+            const contents = document.getElementsByClassName("tab-content");
+            const buttons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+                buttons[i].classList.remove("active");
+            }
+            contents[tabIndex].style.display = "block";
+            buttons[tabIndex].classList.add("active");
+        }
+        showTab(0);
+    </script>
+</body>
+
+</html>
